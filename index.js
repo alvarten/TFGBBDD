@@ -3,10 +3,12 @@ const app = express()
 const port = 3001
 const mongoose = require('mongoose')
 const rutaActividades = require('./rutas/actividades.rutas')
+const rutaUsuarios = require('./rutas/usuarios.rutas')
 
 //middleware
 app.use(express.json())
 app.use('/apirest/', rutaActividades)
+app.use('/apirest/', rutaUsuarios)
 
 //Escucha
 app.listen(port, ()=>{

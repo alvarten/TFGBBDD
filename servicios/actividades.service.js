@@ -50,9 +50,6 @@ class ActividadService{
             return null
         }
     }
-    async findByAñoMayor(año){
-        return await actividad.find({año: {$gt: año}});
-    }
 }
 
 module.exports = ActividadService
