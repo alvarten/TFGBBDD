@@ -30,17 +30,17 @@ ruta.get('/titulo/:titulo', async (req,res) =>{
 })
 
 //ruta de alta
-ruta.post('/alta/:actividad', async (req,res) =>{
+ruta.post('/alta', async (req,res) =>{
 
-    const Actividade = await aDao.altaActividad(req.params.actividad)
+    const Actividad = await aDao.altaActividad(req.body)
 
-    res.send(Actividade)
+    res.send(Actividad)
 })
 
 //ruta de modificar
-ruta.put('/modificar/:actividad:id', async (req,res) =>{
+ruta.put('/modificar/:id', async (req,res) =>{
 
-    const Actividad = await aDao.altaActividad(req.params.actividad,req.params.id)
+    const Actividad = await aDao.altaActividad(req.body,req.params.id)
 
     res.send(Actividad)
 })
